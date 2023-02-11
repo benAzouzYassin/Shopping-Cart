@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .paddings {
+    @apply pl-[50px] lg:pl-[150px] 2xl:pl-[200px] pr-[50px] lg:pr-[150px] 2xl:pr-[200px];
+  }
+  .ItemCard__card-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
