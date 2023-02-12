@@ -7,6 +7,9 @@ type CartProviderPros = {
 type CartItemType = {
     id: string,
     count: number
+    img: string
+    price: number
+    title: string
 }
 
 
@@ -17,6 +20,9 @@ type CartType = {
     getItemCount?: (itemId: string) => number
     addNewItem?: (newItem: CartItemType) => void
     rezero?: (itemId: string) => void
+    getcartItems?: () => CartItemType[]
+    getItemTitle?: (itemId: string) => string | null
+    getTotalPrice?: () => number
 }
 
 
@@ -26,13 +32,22 @@ export const CartContext = createContext<CartType>({})
 
 export function CartProvider(props: CartProviderPros) {
 
-    const [cartItems, setCartItems] = useState<CartItemType[]>(JSON.parse(localStorage.getItem("cartItems") || "[]"))//ex:[{id: , count:},{id:,count:}]
+    const [cartItems, setCartItems] = useState<CartItemType[]>(JSON.parse(localStorage.getItem("cartItems") || "[]"))
 
     useEffect(() => {
         localStorage.setItem("cartItems", JSON.stringify(cartItems))
     }, [cartItems])
 
     const cartItemsCount = cartItems.length
+
+    function getItemTitle(itemId: string) {
+        for (let i = 0; i < cartItems.length; i++) {
+            if (cartItems[i].id == itemId) {
+                return cartItems[i].title
+            }
+        }
+        return null
+    }
 
     function addCartItem(itemId: string) {
         let newItems = [...cartItems];
@@ -45,7 +60,7 @@ export function CartProvider(props: CartProviderPros) {
     }
 
     function rezero(itemId: string) {
-        console.log(itemId);
+
         const newCartItems = cartItems.filter(item => item.id != itemId);
         setCartItems(newCartItems);
 
@@ -79,9 +94,17 @@ export function CartProvider(props: CartProviderPros) {
         setCartItems(oldItems => [...oldItems, newItem]);
     }
 
+    function getcartItems() {
+        return cartItems
+    }
+    function getTotalPrice() {
+        return cartItems.reduce((sum, current) => {
+            return sum + (current.price * current.count)
+        }, 0)
+    }
 
 
-    const contextValue: CartType = { rezero: rezero, addNewItem: addNewItem, itemsCount: cartItemsCount, addItem: addCartItem, removeItem: cartRemoveItem, getItemCount: getItemCount }
+    const contextValue: CartType = { getTotalPrice: getTotalPrice, getItemTitle: getItemTitle, getcartItems: getcartItems, rezero: rezero, addNewItem: addNewItem, itemsCount: cartItemsCount, addItem: addCartItem, removeItem: cartRemoveItem, getItemCount: getItemCount }
 
     return <CartContext.Provider value={contextValue}>{props.children}</CartContext.Provider>
 }

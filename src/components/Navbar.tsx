@@ -40,7 +40,7 @@ export default function Navbar() {
 
             {links}
             <div className='relative ml-auto mt-5'>
-                <div className='rounded-xl bg-blue-500 w-10 h-10 flex items-center justify-center hover:cursor-pointer hover:bg-blue-400' onClick={() => Navigate("/cart")}><svg
+                {pathname != "/cart" && <><div className='rounded-xl bg-blue-500 w-10 h-10 flex items-center justify-center hover:cursor-pointer hover:bg-blue-400' onClick={() => Navigate("/cart")}><svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="20px"
 
@@ -51,7 +51,7 @@ export default function Navbar() {
                 </svg>
 
                 </div>
-                <div className='h-5 w-5 bg-red-600 translate-x-[110%] translate-y-[-70%] rounded-full flex justify-center items-center text-sm font-[500] text-white'>{cart.itemsCount}</div>
+                    <div className='h-5 w-5 bg-red-600 translate-x-[110%] translate-y-[-70%] rounded-full flex justify-center items-center text-sm font-[500] text-white'>{cart.itemsCount}</div></>}
             </div>
 
         </div >
