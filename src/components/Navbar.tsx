@@ -18,16 +18,16 @@ export default function Navbar() {
 
     switch (pathname) {
         case "/":
-            links = [<Link to="/" key={uuid()} className='text-stone-700 hover:text-stone-800'>Home</Link >, <Link to="/store" key={uuid()} className='hover:text-stone-800'>store</Link >, <Link to="/about" key={uuid()} className='hover:text-stone-800'>about</Link >]
+            links = [<Link to="/" key={uuid()} className='text-stone-700 hover:text-stone-800'>Home</Link >, <Link to="/store" key={uuid()} className='hover:text-stone-800'>Store</Link >, <Link to="/about" key={uuid()} className='hover:text-stone-800'>About</Link >]
             break;
         case "/store":
-            links = [<Link to="/" key={uuid()} className='hover:text-stone-800'>Home</Link >, <Link to="/store" key={uuid()} className='text-stone-700 hover:text-stone-800'>store</Link >, <Link to="/about" key={uuid()} className='hover:text-stone-800'>about</Link >]
+            links = [<Link to="/" key={uuid()} className='hover:text-stone-800'>Home</Link >, <Link to="/store" key={uuid()} className='text-stone-700 hover:text-stone-800'>Store</Link >, <Link to="/about" key={uuid()} className='hover:text-stone-800'>About</Link >]
             break
         case "/about":
-            links = [<Link to="/" key={uuid()} className='hover:text-stone-800'>Home</Link >, <Link to="/store" key={uuid()} className='hover:text-stone-800'>store</Link >, <Link to="/about" key={uuid()} className='text-stone-700  hover:text-stone-800'>about</Link >]
+            links = [<Link to="/" key={uuid()} className='hover:text-stone-800'>Home</Link >, <Link to="/store" key={uuid()} className='hover:text-stone-800'>Store</Link >, <Link to="/about" key={uuid()} className='text-stone-700  hover:text-stone-800'>About</Link >]
             break
         default:
-            links = [<Link to="/" key={uuid()} className='hover:text-stone-800'>Home</Link >, <Link to="/store" key={uuid()} className='hover:text-stone-800'>store</Link >, <Link to="/about" key={uuid()} className='hover:text-stone-800'>about</Link >]
+            links = [<Link to="/" key={uuid()} className='hover:text-stone-800'>Home</Link >, <Link to="/store" key={uuid()} className='hover:text-stone-800'>Store</Link >, <Link to="/about" key={uuid()} className='hover:text-stone-800'>About</Link >]
             break;
     }
 
@@ -36,7 +36,7 @@ export default function Navbar() {
 
 
     return (
-        <div className='paddings w-full h-14 items-center shadow-md  sticky top-0 flex gap-8 text-stone-400  text-xl bg-white'>
+        <div className='paddings w-full h-14 items-center shadow-md  sticky top-0 flex gap-8 text-stone-400  text-xl bg-white z-10'>
 
             {links}
             <div className='relative ml-auto mt-5'>

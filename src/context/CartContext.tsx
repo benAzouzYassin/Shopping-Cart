@@ -41,12 +41,14 @@ export function CartProvider(props: CartProviderPros) {
     const cartItemsCount = cartItems.length
 
     function getItemTitle(itemId: string) {
+        let title = ""
         for (let i = 0; i < cartItems.length; i++) {
             if (cartItems[i].id == itemId) {
-                return cartItems[i].title
+                title = cartItems[i].title
             }
         }
-        return null
+        console.log(itemId)
+        return title
     }
 
     function addCartItem(itemId: string) {
