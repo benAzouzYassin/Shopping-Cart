@@ -51,7 +51,7 @@ export default function Home() {
 
                 <div className='flex justify-center w-full h-fit items-center mt-10 flex-wrap gap-7 transition-ease relative xl:pl-24 xl:pr-24'>
                     <div className="w-[20%] md:w-[22%] h-[250px] xl:h-[300px] blur-[2px] rounded-lg " style={{ backgroundImage: `url('${getLeftImage()}')`, backgroundSize: "cover", backgroundPosition: "center" }}> </div>
-                    <div className="w-[40%] md:w-[26%] xl:h-[350px] rounded-lg h-[300px]" style={{ backgroundImage: `url('${getFrontImage()}')`, backgroundSize: "cover", backgroundPosition: "center" }}></div>
+                    <div className="w-[35%] md:w-[26%] xl:h-[350px] rounded-lg h-[300px]" style={{ backgroundImage: `url('${getFrontImage()}')`, backgroundSize: "cover", backgroundPosition: "center" }}></div>
                     <div className="w-[20%] md:w-[22%] h-[250px] xl:h-[300px] blur-[2px] rounded-lg" style={{ backgroundImage: `url('${getRightImage()}')`, backgroundSize: "cover", backgroundPosition: "center" }}></div>
                 </div>
             </div>

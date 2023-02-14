@@ -19,8 +19,8 @@ export default function CartCard(props: CartCardProps) {
             <div className="w-[65%] h-full  flex flex-col">
                 <div className=" flex lg:pt-16 pl-3"><h2 className="text-2xl mr-1">{props.title}</h2><p className="text-gray-600 text-md mt-2">x{props.countInCart}</p></div>
 
-                <p className="text-lg text-gray-500 pl-3 pt-2">${props.price}</p>
-                <div className="flex ml-auto pr-5 mt-[-2.25rem]"> <p className="text-2xl">${props.price * props.countInCart}</p> <button onClick={removeItemFromCart} className="bg-white text-red-500 border-[1px] hover:bg-red-100 border-red-500 ml-2 w-9 h-9 rounded">X</button></div>
+                <p className="text-sm lg:text-lg text-gray-500 pl-3 pt-2">${props.price}</p>
+                <div className="flex ml-auto pr-5 mt-[-2.25rem]"> <p className=" text-xl lg:text-2xl mr-[-25px] mt-[-10px]  lg:mr-0">${props.price * props.countInCart}</p> <button onClick={removeItemFromCart} className=" mt-8 lg:mt-0 bg-white text-red-500 border-[1px] hover:bg-red-100 border-red-500 ml-2 w-9 h-9 rounded">X</button></div>
             </div>
 
         </div>

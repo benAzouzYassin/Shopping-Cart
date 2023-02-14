@@ -14,6 +14,6 @@ export default function cart() {
             <Navbar />
             <div className='mt-10 paddings'>{cart.getcartItems!().map(item => <CartCard key={item.id} id={item.id} title={cart.getItemTitle!(item.id) || "No title"} img={item.img} price={item.price} countInCart={cart.getItemCount!(item.id)} />)}</div>
             {cart.getcartItems!().length == 0 && <h1 className='text-center text-5xl text-gray-400 mt-[35vh]'>There are no items.</h1>}
-            {cart.getcartItems!().length != 0 && <p className='ml-auto mr-[200px] text-5xl font-semibold'><span className='text-5xl font-bold'>Total : </span>{toDollar(cart.getTotalPrice!())}</p>} </div>
+            {cart.getcartItems!().length != 0 && <p className='ml-auto pr-10  text-2xl lg:text-5xl font-semibold text-end w-fit'><span className=' lg:text-5xl font-bold ml-auto'>Total : </span>{toDollar(cart.getTotalPrice!())}</p>} </div>
     )
 }
