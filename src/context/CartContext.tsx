@@ -47,7 +47,7 @@ export function CartProvider(props: CartProviderPros) {
                 title = cartItems[i].title
             }
         }
-        console.log(itemId)
+
         return title
     }
 
