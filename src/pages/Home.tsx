@@ -49,10 +49,10 @@ export default function Home() {
                 <h3 className='mt-[-0.75rem] text-center text-zinc-700'>live by this principle evrey day.</h3>
                 <button onClick={() => Navigate('/store')} className='mt-10 text-md bg-blue-500 text-stone-100 rounded-md  w-36 h-10 self-center hover:bg-blue-600 '>Our Products</button>
 
-                <div className='flex justify-center w-full h-fit items-center mt-10 flex-wrap gap-7 transition-ease relative'>
-                    <div className="w-[22%] h-[300px] blur-[2px] rounded-lg" style={{ backgroundImage: `url('${getLeftImage()}')`, backgroundSize: "cover", backgroundPosition: "center" }}> </div>
-                    <div className="w-[26%] h-[350px] rounded-lg" style={{ backgroundImage: `url('${getFrontImage()}')`, backgroundSize: "cover", backgroundPosition: "center" }}></div>
-                    <div className="w-[22%] h-[300px] blur-[2px] rounded-lg" style={{ backgroundImage: `url('${getRightImage()}')`, backgroundSize: "cover", backgroundPosition: "center" }}></div>
+                <div className='flex justify-center w-full h-fit items-center mt-10 flex-wrap gap-7 transition-ease relative xl:pl-24 xl:pr-24'>
+                    <div className="w-[20%] md:w-[22%] h-[250px] xl:h-[300px] blur-[2px] rounded-lg " style={{ backgroundImage: `url('${getLeftImage()}')`, backgroundSize: "cover", backgroundPosition: "center" }}> </div>
+                    <div className="w-[40%] md:w-[26%] xl:h-[350px] rounded-lg h-[300px]" style={{ backgroundImage: `url('${getFrontImage()}')`, backgroundSize: "cover", backgroundPosition: "center" }}></div>
+                    <div className="w-[20%] md:w-[22%] h-[250px] xl:h-[300px] blur-[2px] rounded-lg" style={{ backgroundImage: `url('${getRightImage()}')`, backgroundSize: "cover", backgroundPosition: "center" }}></div>
                 </div>
             </div>
         </div >
